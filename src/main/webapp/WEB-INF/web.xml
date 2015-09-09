@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<servlet>
+		<servlet-name>AdressVerwaltungServer</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>
+			de.akquinet.rest.service
+		</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jersey.config.server.provider.scanning.recursive</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdressVerwaltungServer</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>simple-cross</filter-name>
+		<filter-class>de.akquinet.rest.filter.SimpleCrossFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>simple-cross</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>

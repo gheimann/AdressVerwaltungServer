@@ -38,10 +38,6 @@ public class AdressService {
 
 	}
 
-	public AdressService() {
-		System.err.println("Initialisierung AdressService");
-	}
-
 	@GET
 	@Path("element/{addressId}")
 	@Produces(MediaType.APPLICATION_JSON)

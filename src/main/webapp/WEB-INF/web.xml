@@ -9,7 +9,7 @@
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
 			<param-value>
-			de.akquinet.rest.service
+			de.akquinet.rest.service.adress,de.akquinet.rest.service.login
 		</param-value>
 		</init-param>
 		<init-param>
